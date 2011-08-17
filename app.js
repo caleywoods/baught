@@ -3,7 +3,7 @@
 var irc = require('./node_modules/IRC-js/lib/irc');
 
 var opts = {server: "irc.freenode.org",
-            channels: ["#rstatus"],
+            channels: ["#jinglebellsfoo"],
             nick: "baught"}; // baught is registered on freenode, need to pick a new name
 
 // Create a new irc connection to
@@ -43,5 +43,6 @@ server.addListener('privmsg', function(msg) {
 
   if(message == 'baught gtfo') {
     server.privmsg( chan, "You guys are lame, I'm out." );
+    server.quit(); //not using a quit msg
   }
 });
